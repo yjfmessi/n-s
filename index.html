@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Te Amo, Ise!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(145deg, #fff0f5, #ffe0ec);
+      color: #a10035;
+      text-align: center;
+      padding: 30px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #c0005c;
+      font-size: 70px;
+      margin-bottom: 20px;
+    }
+
+    img.foto {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 40px;
+      box-shadow: 0 0 30px #ff99c8;
+      margin: 30px 0;
+    }
+
+    #contador {
+      font-size: 26px;
+      background-color: #ffffffaa;
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 18px;
+      margin: 25px 0;
+      font-weight: bold;
+      border: 3px dashed #ff66a3;
+    }
+
+    .frase {
+      font-size: 32px;
+      margin: 30px 0;
+      color: #c0005c;
+      font-style: italic;
+    }
+
+    .pergunta {
+      font-size: 30px;
+      margin-top: 50px;
+      display: none;
+    }
+
+    .resposta {
+      display: block;
+      margin: 15px auto;
+      background-color: #ffe4f0;
+      padding: 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      width: 75%;
+      transition: 0.3s;
+      border: 3px solid #ffaad4;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .resposta:hover {
+      background-color: #ffcce6;
+      transform: scale(1.05);
+    }
+
+    #feedback {
+      margin-top: 25px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    #final {
+      display: none;
+      font-size: 32px;
+      margin-top: 60px;
+      color: #a10035;
+    }
+
+    .flutuante {
+      position: fixed;
+      bottom: -60px;
+      pointer-events: none;
+      z-index: 999;
+      animation: flutuar 5s linear forwards;
+      opacity: 0.9;
+    }
+
+    @keyframes flutuar {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-700px) rotate(720deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Feliz Aniversário de Namoro!</h1>
+  <img src="IMG_20250414_195719157_MFNR.jpg" alt="Noizin" class="foto">
+  <div id="contador"></div>
+  <div class="frase">"Você é minha melhor escolha todos os dias, minha Ise."</div>
+
+  <!-- PERGUNTAS -->
+  <div class="pergunta" id="q0">
+    Qual foi nosso primeiro rolê juntos?
+    <div class="resposta" onclick="verificarResposta(true)">Na volta da missa</div>
+    <div class="resposta" onclick="verificarResposta(false)">No racha</div>
+    <div class="resposta" onclick="verificarResposta(false)">No shopping vendo Velozes e Furiosos</div>
+    <div class="resposta" onclick="verificarResposta(false)">Na pracinha do centro</div>
+    <div class="resposta" onclick="verificarResposta(false)">No show da escola</div>
+  </div>
+
+  <div class="pergunta" id="q1">
+    Qual apelido fofo você me deu?
+    <div class="resposta" onclick="verificarResposta(true)">Nanâm</div>
+    <div class="resposta" onclick="verificarResposta(false)">Biscoitinho</div>
+    <div class="resposta" onclick="verificarResposta(false)">Dumbo</div>
+    <div class="resposta" onclick="verificarResposta(false)">Pamonhinha</div>
+    <div class="resposta" onclick="verificarResposta(false)">Nenezudo</div>
+  </div>
+
+  <div class="pergunta" id="q2">
+    Onde a gente se beijou pela primeira vez?
+    <div class="resposta" onclick="verificarResposta(true)">Em frente ao portão enferrujado</div>
+    <div class="resposta" onclick="verificarResposta(false)">No ponto de ônibus</div>
+    <div class="resposta" onclick="verificarResposta(false)">Na frente de um portão meio velho</div>
+    <div class="resposta" onclick="verificarResposta(false)">No banco da praça</div>
+    <div class="resposta" onclick="verificarResposta(false)">No portão da escola</div>
+  </div>
+
+  <div class="pergunta" id="q3">
+    Qual meu time?
+    <div class="resposta" onclick="verificarResposta(true)">Palmeiras</div>
+    <div class="resposta" onclick="verificarResposta(false)">Corinthians</div>
+    <div class="resposta" onclick="verificarResposta(false)">Flamengo</div>
+    <div class="resposta" onclick="verificarResposta(false)">São Paulo</div>
+    <div class="resposta" onclick="verificarResposta(false)">Vasco</div>
+  </div>
+
+  <div class="pergunta" id="q4">
+    Qual meu anime favorito?
+    <div class="resposta" onclick="verificarResposta(true)">Jujutsu Kaisen</div>
+    <div class="resposta" onclick="verificarResposta(false)">Naruto</div>
+    <div class="resposta" onclick="verificarResposta(false)">One Piece</div>
+    <div class="resposta" onclick="verificarResposta(false)">Bleach</div>
+    <div class="resposta" onclick="verificarResposta(false)">Death Note</div>
+  </div>
+
+  <div class="pergunta" id="q5">
+    Qual nossa música?
+    <div class="resposta" onclick="verificarResposta(true)">Djavan - Amor Puro</div>
+    <div class="resposta" onclick="verificarResposta(false)">Lisboa</div>
+    <div class="resposta" onclick="verificarResposta(false)">Aliança</div>
+    <div class="resposta" onclick="verificarResposta(false)">Trem-Bala</div>
+    <div class="resposta" onclick="verificarResposta(false)">Anunciação</div>
+  </div>
+
+  <div id="feedback"></div>
+  <div id="final">TE AMO DEMAIS, AMOR! Você é meu motivo de sorrir todo dia.</div>
+
+  <script>
+    const inicio = new Date('2024-07-14T20:00:00');
+    let perguntaAtual = 0;
+
+    function atualizarContador() {
+      const agora = new Date();
+      const dif = agora - inicio;
+      const seg = Math.floor(dif / 1000);
+      const min = Math.floor(seg / 60);
+      const hrs = Math.floor(min / 60);
+      const dias = Math.floor(hrs / 24);
+      const meses = Math.floor(dias / 30.44);
+
+      const restanteDias = dias % 30.44;
+      const restanteHoras = hrs % 24;
+      const restanteMinutos = min % 60;
+      const restanteSegundos = seg % 60;
+
+      document.getElementById("contador").innerHTML =
+        `Estamos juntos há ${meses} meses, ${Math.floor(restanteDias)} dias, ${restanteHoras}h ${restanteMinutos}min ${restanteSegundos}s`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+
+    document.getElementById("q0").style.display = "block";
+
+    function verificarResposta(certa) {
+      const feedback = document.getElementById("feedback");
+      if (certa) {
+        feedback.innerHTML = "ACERTOU, AMORZIN! KKKKK ❤️";
+        feedback.style.color = "#28a745";
+        soltarCoracoes();
+        setTimeout(() => {
+          document.getElementById(`q${perguntaAtual}`).style.display = "none";
+          perguntaAtual++;
+          feedback.innerHTML = "";
+          if (document.getElementById(`q${perguntaAtual}`)) {
+            document.getElementById(`q${perguntaAtual}`).style.display = "block";
+          } else {
+            document.getElementById("final").style.display = "block";
+            soltarCoracoes();
+          }
+        }, 1800);
+      } else {
+        feedback.innerHTML = "ERRÔÔÔÔU KKKKK tenta de novo, amor!";
+        feedback.style.color = "#ff0000";
+      }
+    }
+
+    function soltarCoracoes() {
+      const simbolos = ["❤️", "💗", "💖", "💕"];
+      for (let i = 0; i < 40; i++) {
+        const el = document.createElement("div");
+        el.classList.add("flutuante");
+        el.textContent = simbolos[Math.floor(Math.random() * simbolos.length)];
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.animationDelay = (Math.random() * 2) + "s";
+        el.style.fontSize = (24 + Math.random() * 30) + "px";
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 6000);
+      }
+    }
+  </script>
+</body>
+</html>
+
